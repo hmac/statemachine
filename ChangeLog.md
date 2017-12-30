@@ -1,3 +1,3 @@
-# Changelog for statesman
+# Changelog for statemachine
 
 ## Unreleased changes

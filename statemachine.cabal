@@ -2,12 +2,12 @@
 --
 -- see: https://github.com/sol/hpack
 
-name:           statesman
+name:           statemachine
 version:        0.1.0.0
 synopsis:       Short description of your package
-description:    Please see the README on Github at <https://github.com/githubuser/statesman#readme>
-homepage:       https://github.com/githubuser/statesman#readme
-bug-reports:    https://github.com/githubuser/statesman/issues
+description:    Please see the README on Github at <https://github.com/githubuser/statemachine#readme>
+homepage:       https://github.com/githubuser/statemachine#readme
+bug-reports:    https://github.com/githubuser/statemachine/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2017 Author name here
@@ -22,7 +22,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/statesman
+  location: https://github.com/githubuser/statemachine
 
 library
   hs-source-dirs:
@@ -34,7 +34,7 @@ library
     , Example
   default-language: Haskell2010
 
-test-suite statesman-test
+test-suite statemachine-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   hs-source-dirs:
@@ -42,6 +42,6 @@ test-suite statesman-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >= 4.7 && < 5
-    , statesman
+    , statemachine
     , hspec
   default-language: Haskell2010
