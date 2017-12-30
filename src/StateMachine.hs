@@ -38,7 +38,7 @@ transitionTo machine@(StateMachine object _ transitions guards) state =
 validTransition :: StateMachine o s -> s -> Bool
 validTransition (StateMachine _ _ [] _) _ = False
 validTransition (StateMachine obj current transitions guards) next =
-  and [transitionExists, guardsHappy]
+    transitionExists && guardsHappy
     where transitionExists = Transition current next `elem` transitions
           guardsHappy = and $ map (\g -> runGuard g obj) relevantGuards
           relevantGuards = guardsFor current next guards
@@ -52,4 +52,4 @@ guardsFor :: Eq s => s -> s -> [Guard o s] -> [Guard o s]
 guardsFor from to guards = filter match guards
   where match (GuardFrom f _) = f == from
         match (GuardTo t _) = t == to
-        match (GuardFromTo f t _) = and [f == from, t == to]
+        match (GuardFromTo f t _) = f == from && t == to
